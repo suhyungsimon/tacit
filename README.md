@@ -87,7 +87,7 @@ Analyzes the current Claude conversation thread and saves it as a structured kno
 ```mermaid
 graph LR
     MIC[Microphone\n16kHz mono] --> CAP[Capture\nmalgo]
-    SYS[System Audio\nScreenCaptureKit] --> CAP
+    SYS[System Audio\nCore Audio tap] --> CAP
     CAP --> VAD[VAD\nten-vad / Silero]
     VAD --> BUF[Segment Buffer]
     BUF --> STT[STT\nwhisper.cpp]
@@ -118,7 +118,7 @@ Entries are stored under `~/.tacit/memory/<category>/YYYYMMDD-HHMMSS.md` — pla
 
 ## Requirements
 
-- macOS (Apple Silicon)
+- macOS 14.2+ (Apple Silicon)
 - [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code)
 
 ---
